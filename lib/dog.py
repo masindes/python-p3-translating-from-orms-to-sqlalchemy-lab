@@ -1,7 +1,17 @@
+
+from sqlalchemy import create_engine
 from models import Dog
 
+create_engine = create_engine('sqlite:///:memory:')
 def create_table(base):
-    pass
+    sql = '''
+        CREATE TABLE IF NOT EXISTS dogs(
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        breed TEXT NOT NULL
+        );
+    
+        '''
 
 def save(session, dog):
     pass
